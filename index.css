@@ -1,0 +1,186 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensures padding doesn't affect element dimensions */
+}
+
+/* ===== MAIN BODY STYLES ===== */
+body {
+    background: url(images/bg-desktop.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100vh;
+    background-color: hsl(229, 57%, 11%);
+    padding: 16.25rem; /* 260px */
+    padding-bottom: 18.4375rem; /* 295px */
+    display: grid;
+    gap: 1.875rem; /* 30px */
+    grid-template-columns: 1fr 1.543fr;
+    align-items: end;
+    font-family: "Raleway", sans-serif;
+}
+
+/* ===== LEFT BOX (LOGO + ICONS) ===== */
+.left-box {
+    background-color: hsl(228, 56%, 26%);
+    padding: 2.5rem 8.3125rem 2.5rem 2.5rem; /* 40px 133px 40px 40px */
+    border-radius: 0.75rem; /* 12px */
+    border-top-right-radius: 6rem; /* 96px */
+}
+
+.icons {
+    margin-top: 2.0625rem; /* 33px */
+    display: flex;
+    column-gap: 1rem; /* 16px */
+}
+
+.icon {
+    background-color: hsl(229, 57%, 11%);
+    width: 3rem; /* 48px */
+    height: 3rem; /* 48px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem; /* 8px */
+}
+
+/* ===== RIGHT BOX (STORAGE METER) ===== */
+.right-box {
+    background-color: hsl(228, 56%, 26%);
+    padding: 2.625rem 2.5rem; /* 42px 40px */
+    border-radius: 0.75rem; /* 12px */
+    width: 100%;
+    position: relative;
+}
+
+.you-clas {
+    color: hsl(243, 100%, 93%);
+    padding-bottom: 1rem; /* 16px */
+}
+
+/* GB REMAINING INDICATOR */
+.gb-class {
+    display: flex;
+    gap: 0.6875rem; /* 11px */
+    background-color: white;
+    padding: 1.3125rem 1.5625rem 1rem 1.5625rem; /* 21px 25px 16px 25px */
+    width: fit-content;
+    border-radius: 0.625rem; /* 10px */
+    align-items: center;
+    position: absolute;
+    top: -2.9375rem; /* -47px */
+    right: 2.5rem; /* 40px */
+}
+
+/* TRIANGLE POINTER */
+.gb-class::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem; /* -24px */
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 2.5rem solid transparent; /* 40px */
+    border-top: 2.5rem solid white; /* 40px */
+}
+
+.number {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+}
+
+/* PROGRESS BAR CONTAINER */
+.progress-bar-container {
+    width: 100%;
+    background-color: hsl(229, 57%, 11%);
+    height: 1.25rem; /* 20px */
+    border-radius: 0.75rem; /* 12px */
+    display: flex;
+    align-items: center;
+    padding: 0.1875rem; /* 3px */
+}
+
+/* COLORED PROGRESS BAR */
+.progress-bar {
+    width: 81.5%;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: 100%;
+    border-radius: 0.75rem; /* 12px */
+    position: relative;
+}
+
+/* PROGRESS BALL */
+.ball {
+    width: 0.625rem; /* 10px */
+    height: 0.625rem; /* 10px */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 3.125rem; /* 50px */
+    position: absolute;
+    right: 0.1875rem; /* 3px */
+    top: 0.125rem; /* 2px */
+}
+
+/* MIN/MAX LABELS */
+.start-end {
+    display: flex;
+    padding-top: 0.75rem; /* 12px */
+    justify-content: space-between;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.gp-left {
+    font-size: 0.75rem; /* 12px */
+    font-weight: 700;
+    color: hsl(229, 7%, 55%);
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 50rem) { /* 800px */
+    body {
+        background: url(images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        background-color: hsl(229, 57%, 11%);
+        padding: 1.5rem; /* 24px */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem; /* 16px */
+        font-family: "Raleway", sans-serif;
+    }
+    
+    .left-box {
+        width: 100%;
+        padding-right: 6.75rem; /* 108px */
+    }
+    
+    .right-box {
+        padding: 2.1875rem 2rem 3.4375rem 2rem; /* 35px 32px 55px 32px */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .you-clas {
+        text-align: center;
+        font-size: 0.875rem; /* 14px */
+    }
+    
+    .gb-class {
+        top: auto;
+        bottom: -2.25rem; /* -36px */
+        right: auto;
+    }
+    
+    .gb-class::after {
+        display: none;
+    }
+    
+    .start-end {
+        width: 100%;
+    }
+}
